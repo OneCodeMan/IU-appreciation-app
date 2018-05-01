@@ -3,5 +3,5 @@ class Song {
   final String title;
   final String albumName;
 
-  Song(this.audioFile, this.title, this.albumName);
+  const Song({this.audioFile, this.title, this.albumName});
 }

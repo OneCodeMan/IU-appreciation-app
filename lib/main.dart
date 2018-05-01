@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import './models/song.dart';
+import './views/song_cell.dart';
 //import 'package:iu_appreciation/views/iu_carousel.dart';
 
 void main() => runApp(new IUAppreciationApp());
@@ -14,6 +16,13 @@ class IUAppreciationApp extends StatefulWidget {
 class IUAppreciationState extends State<IUAppreciationApp> {
 
   static final descriptionString = 'An independent Korean artist, IU is awesome. She has a nice voice and a seemingly nice personality. She was on Running Man. If I met her, I would probably need a translator to talk to her.';
+  
+  static final kSongs = const <Song>[
+    const Song(audioFile: "dummy.mp3", title: "Full Stop", albumName: "Palette"),
+    const Song(audioFile: "dummy2.mp3", title: "Obliviate", albumName: "Modern Times"),
+    const Song(audioFile: "dummy3.mp3", title: "23", albumName: "Chat-shire")
+  ];
+
   Padding descriptionText = new Padding(
                   padding: new EdgeInsets.all(15.0),
                     child: new Text(
@@ -28,15 +37,16 @@ class IUAppreciationState extends State<IUAppreciationApp> {
     return new MaterialApp(
       home: new Scaffold(
         appBar: new AppBar(
-          title: new Text('I ❤️ IU')
+          title: new Text('I ❤️ IU', style: new TextStyle(color: Colors.black, fontSize: 30.0)),
+          backgroundColor: Colors.white,
         ),
         body:
           new Container(
             child: new ListView(
               children: [
-                new Image.asset("images/iu_carousel_1.jpg"),
+                new Image.asset('images/iu_carousel_1.jpg'),
                 descriptionText,
-                
+                new SongCell(kSongs[0])
               ]
             )
           )
