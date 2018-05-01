@@ -13,8 +13,12 @@ class SongCell extends StatelessWidget {
       decoration: new BoxDecoration(
         border: new Border(
           top: new BorderSide(
-            color: Colors.black,
-            width: 2.0
+            color: Colors.grey,
+            width: 1.0
+            ),
+          bottom: new BorderSide(
+            color: Colors.grey,
+            width: 1.0
           )
         )
       ),
