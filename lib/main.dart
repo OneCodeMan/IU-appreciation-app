@@ -13,7 +13,15 @@ class IUAppreciationApp extends StatefulWidget {
 
 class IUAppreciationState extends State<IUAppreciationApp> {
 
-  String descriptionText = 'An independent Korean artist, IU is awesome. She has a nice voice and a seemingly nice personality. She was on Running Man. If I met her, I would probably need a translator to talk to her.';
+  static final descriptionString = 'An independent Korean artist, IU is awesome. She has a nice voice and a seemingly nice personality. She was on Running Man. If I met her, I would probably need a translator to talk to her.';
+  Padding descriptionText = new Padding(
+                  padding: new EdgeInsets.all(15.0),
+                    child: new Text(
+                    descriptionString,
+                    textAlign: TextAlign.center,
+                    style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 15.0),
+                  ) 
+                );
 
   @override
   Widget build(BuildContext context) {
@@ -27,14 +35,8 @@ class IUAppreciationState extends State<IUAppreciationApp> {
             child: new ListView(
               children: [
                 new Image.asset("images/iu_carousel_1.jpg"),
-                new Padding(
-                  padding: new EdgeInsets.all(15.0),
-                    child: new Text(
-                    descriptionText,
-                    textAlign: TextAlign.center,
-                    style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 15.0),
-                  ) 
-                )
+                descriptionText,
+                
               ]
             )
           )
