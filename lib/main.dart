@@ -21,14 +21,12 @@ class IUAppreciationState extends State<IUAppreciationApp> {
           title: new Text("I ❤️ IU")
         ),
         body: new Stack(
-          children: <Widget>[
+          alignment: AlignmentDirectional.center,
+          children: [
             new PageView(
-              children: [new IUCarousel]
-            ),
-            new ListView(
               children: [
-                new Text("Tigers Jaw"),
-              ],
+                new IUCarousel(),
+              ]
             ),
           ]
         ),
