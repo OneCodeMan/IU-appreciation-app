@@ -13,27 +13,28 @@ class IUAppreciationApp extends StatefulWidget {
 
 class IUAppreciationState extends State<IUAppreciationApp> {
 
-  String descriptionText = 'orem Ipsum is simply dummy Ipsum is simply dummy  Ipsum is simply dummy  Ipsum is simply dummy  Ipsum is simply dummy  Ipsum is simply dummy  Ipsum is simply dummy  Ipsum is simply dummy  Ipsum is simply dummy  Ipsum is simply dummy  Ipsum is simply dummy  text of the printing and typesetting industry. Lorem Ipsum has been the industry';
+  String descriptionText = 'An independent Korean artist, IU is awesome. She has a nice voice and a seemingly nice personality. She was on Running Man. If I met her, I would probably need a translator to talk to her.';
 
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
       home: new Scaffold(
         appBar: new AppBar(
-          title: new Text("I ❤️ IU")
+          title: new Text('I ❤️ IU')
         ),
         body:
           new Container(
-            child: new Column(
+            child: new ListView(
               children: [
                 new Image.asset("images/iu_carousel_1.jpg"),
-                new Text(
-                  descriptionText,
-                  textAlign: TextAlign.center,
-                  style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 40.0),
-                  
-                ) 
-              
+                new Padding(
+                  padding: new EdgeInsets.all(15.0),
+                    child: new Text(
+                    descriptionText,
+                    textAlign: TextAlign.center,
+                    style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 15.0),
+                  ) 
+                )
               ]
             )
           )
