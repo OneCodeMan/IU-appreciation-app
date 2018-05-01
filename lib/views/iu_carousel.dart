@@ -5,7 +5,6 @@ class IUCarousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Container(
-      margin: new EdgeInsets.only(top: 0.0),
       child: new Carousel(
         children: [
           new AssetImage('images/iu_carousel_1.jpg'),
@@ -19,9 +18,6 @@ class IUCarousel extends StatelessWidget {
         animationDuration: const Duration(seconds: 3),
         
       ),
-      
     );
   }
-
-  
 }
