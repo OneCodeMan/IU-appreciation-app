@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/song.dart';
+import 'package:audioplayer/audioplayer.dart';
 
 class SongCell extends StatefulWidget {
   final Song song;
@@ -15,12 +16,21 @@ class SongCell extends StatefulWidget {
 
 class SongCellState extends State<SongCell> {
 
+  AudioPlayer audioPlayer = new AudioPlayer();
+
   bool _isPlaying = false;
 
   void _handlePlayPause() {
     setState(() {
       _isPlaying = !_isPlaying;
     });
+
+    if (_isPlaying) {
+      audioPlayer.pause();
+    } else {
+      audioPlayer.play(widget.song.audioFile);
+    }
+
   }
 
   @override

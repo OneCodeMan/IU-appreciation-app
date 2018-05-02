@@ -18,9 +18,9 @@ class IUAppreciationState extends State<IUAppreciationApp> {
   static final descriptionString = 'An independent Korean artist, IU is awesome. She has a nice voice and a seemingly nice personality. She was on Running Man. If I met her, I would probably need a translator to talk to her.';
   
   static final kSongs = const <Song>[
-    const Song(audioFile: "dummy.mp3", title: "Full Stop", albumName: "Palette"),
-    const Song(audioFile: "dummy2.mp3", title: "Obliviate", albumName: "Modern Times"),
-    const Song(audioFile: "dummy3.mp3", title: "23", albumName: "Chat-shire")
+    const Song(audioFile: "http://www.rxlabz.com/labz/audio2.mp3", title: "Full Stop", albumName: "Palette"),
+    const Song(audioFile: "http://www.rxlabz.com/labz/audio.mp3", title: "Obliviate", albumName: "Modern Times"),
+    const Song(audioFile: "https://soundcloud.com/late-ride/iu-paletteim-feeling-25-version/download/mp3", title: "23", albumName: "Chat-shire")
   ];
 
   Padding descriptionText = new Padding(
