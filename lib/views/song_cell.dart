@@ -1,11 +1,27 @@
 import 'package:flutter/material.dart';
 import '../models/song.dart';
 
-class SongCell extends StatelessWidget {
+class SongCell extends StatefulWidget {
   final Song song;
+
   SongCell(this.song);
 
-  //var _isPlaying = false;
+  @override
+  State<StatefulWidget> createState() {
+    return new SongCellState();
+  }
+
+}
+
+class SongCellState extends State<SongCell> {
+
+  bool _isPlaying = false;
+
+  void _handlePlayPause() {
+    setState(() {
+      _isPlaying = !_isPlaying;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,11 +41,9 @@ class SongCell extends StatelessWidget {
       child: new Row(
         children: [
           new IconButton(
-            onPressed: () { 
-              print("Pressed");
-            },
+            onPressed: _handlePlayPause,
             iconSize: 64.0,
-            icon: new Icon(Icons.play_circle_outline),
+            icon: _isPlaying? new Icon(Icons.pause_circle_outline) : new Icon(Icons.play_circle_outline),
             color: Colors.blue
           ),
           new Column(
@@ -37,7 +51,7 @@ class SongCell extends StatelessWidget {
             new Padding(
               padding: new EdgeInsets.all(15.0),
               child: new Text(
-                '${song.title}\n${song.albumName}',
+                '${widget.song.title}\n${widget.song.albumName}',
                 style: new TextStyle(
                   fontSize: 19.0,
                   fontWeight: FontWeight.w700
