@@ -15,7 +15,7 @@ class SongCell extends StatelessWidget {
           top: new BorderSide(
             color: Colors.grey,
             width: 1.0
-            ),
+          ),
           bottom: new BorderSide(
             color: Colors.grey,
             width: 1.0
@@ -32,12 +32,20 @@ class SongCell extends StatelessWidget {
             icon: new Icon(Icons.play_circle_outline),
             color: Colors.blue
           ),
-          new Padding(
-            padding: new EdgeInsets.all(15.0),
-            child: new Text(
-              '${song.title}\n${song.albumName}'
+          new Column(
+            children: [
+            new Padding(
+              padding: new EdgeInsets.all(15.0),
+              child: new Text(
+                '${song.title}\n${song.albumName}',
+                style: new TextStyle(
+                  fontSize: 19.0,
+                  fontWeight: FontWeight.w700
+                ),
               )
-          ) 
+            ) 
+            ],
+          )
         ]
       )
     );

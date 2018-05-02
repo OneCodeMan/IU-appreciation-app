@@ -46,7 +46,9 @@ class IUAppreciationState extends State<IUAppreciationApp> {
               children: [
                 new Image.asset('images/iu_carousel_1.jpg'),
                 descriptionText,
-                new SongCell(kSongs[0])
+                new SongCell(kSongs[0]),
+                new SongCell(kSongs[1]),
+                new SongCell(kSongs[2])
               ]
             )
           )
